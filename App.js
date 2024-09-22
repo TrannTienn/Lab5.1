@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// src/App.js
+import React from 'react';
+import { SafeAreaView, StyleSheet, ImageBackground } from 'react-native';
+import UserManagement from './compoment/UserManagement'; 
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ImageBackground 
+      source={require('./assets/bgn.jpg')} 
+      style={styles.background}
+    >
+      <SafeAreaView style={styles.container}>
+        <UserManagement />
+      </SafeAreaView>
+    </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
+  container: {
+    flex: 1,
+    padding: 30,
+    
+  },
 });
+
+export default App;
